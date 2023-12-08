@@ -37,7 +37,7 @@ const Blogs = () => {
     try {
       setLoading(true);
       const res = await fetch(
-        "http://localhost:8080/api/blogs/changeBlogStatus",
+        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/changeBlogStatus",
         {
           method: "POST",
           headers: {
@@ -64,7 +64,7 @@ const Blogs = () => {
   const getBlogs = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8080/api/blogs/getAllBlogs", {
+      const res = await fetch("http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/getAllBlogs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

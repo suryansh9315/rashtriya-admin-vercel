@@ -88,7 +88,7 @@ const TextArea = () => {
         text_section_2: value2,
         tags,
       };
-      const res = await fetch("http://localhost:8080/api/blogs/create-blog", {
+      const res = await fetch("http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/create-blog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
