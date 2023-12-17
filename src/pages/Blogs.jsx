@@ -64,13 +64,16 @@ const Blogs = () => {
   const getBlogs = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/getAllBlogs", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token: userToken }),
-      });
+      const res = await fetch(
+        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/getAllBlogs",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token: userToken }),
+        }
+      );
       const data = await res.json();
       if (res.status === 400) notify(data.message, "failure");
       if (res.status === 401) setUserToken(null);
@@ -136,11 +139,7 @@ const Blogs = () => {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {filteredBlogsList.map((blog) => (
-                <tr
-                  className="bg-white cursor-pointer"
-                  onClick={() => handleStatus(blog)}
-                  key={blog._id}
-                >
+                <tr className="bg-white" key={blog._id}>
                   <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
                     <a
                       href="#"
@@ -154,11 +153,12 @@ const Blogs = () => {
                   </td>
                   <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
                     <span
-                      className={`p-1.5 text-xs font-medium uppercase tracking-wider ${
+                      className={`p-1.5 text-xs font-medium uppercase tracking-wider cursor-pointer ${
                         blog.status ? "text-green-800" : "text-gray-800"
                       } ${
                         blog.status ? "bg-green-200" : "bg-gray-200"
                       } rounded-lg bg-opacity-50`}
+                      onClick={() => handleStatus(blog)}
                     >
                       {blog.status ? "Published" : "Not Published"}
                     </span>

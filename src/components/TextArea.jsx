@@ -62,6 +62,10 @@ const TextArea = () => {
       notify("Cannot upload empty article.", "failure");
       return;
     }
+    if (!image) {
+      notify("Cover Image is Mandatory.", "failure");
+      return;
+    }
     const tags = [];
     if (nationalNews) tags.push("national");
     if (stateNews) tags.push("state");
@@ -313,7 +317,7 @@ const TextArea = () => {
             <label htmlFor="image_1">
               <PhotoIcon className="h-6 w-6 hover:scale-125 transition-all duration-300 cursor-pointer" />
             </label>
-            <div>
+            {/* <div>
               <VideoCameraIcon
                 className="h-6 w-6 hover:scale-125 transition-all duration-300 cursor-pointer"
                 onClick={() => setImage_1_link_3(!image_1_link_3)}
@@ -343,7 +347,7 @@ const TextArea = () => {
                   <ArrowRightIcon className="h-5 w-5 text-white" />
                 </div>
               </div>
-            </div>
+            </div> */}
           </>
         )}
       </div>
