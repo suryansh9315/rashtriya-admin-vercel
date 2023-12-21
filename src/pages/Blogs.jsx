@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import { user_token } from "../atoms/user";
 import { useRecoilState } from "recoil";
 import toast, { Toaster } from "react-hot-toast";
+import SingleBlogList from "../components/SingleBlogList";
 
 const Blogs = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,34 +32,6 @@ const Blogs = () => {
       toast(text, {
         icon: "✅",
       });
-  };
-
-  const handleStatus = async (blog) => {
-    try {
-      setLoading(true);
-      const res = await fetch(
-        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/changeBlogStatus",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token: userToken, blogId: blog._id }),
-        }
-      );
-      const data = await res.json();
-      if (res.status === 400) notify(data.message, "failure");
-      if (res.status === 401) setUserToken(null);
-      if (res.status === 200) {
-        notify(data.message, "success");
-        getBlogs();
-      }
-    } catch (error) {
-      console.log(error);
-      notify("Something went wrong.", "failure");
-    } finally {
-      setLoading(false);
-    }
   };
 
   const getBlogs = async () => {
@@ -96,9 +69,9 @@ const Blogs = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className={`py-7 px-7 w-full bg-[#f3f4f6]`}>
+      <div className={`py-7 px-7 w-full bg-[#f4f4f4]`}>
         <h1 className="text-2xl font-semibold mb-5">Blogs</h1>
-        <div className="relative shadow-md mb-5">
+        <div className="relative shadow mb-5">
           <AiOutlineSearch
             className="absolute top-[14px] left-4 text-xl text-gray-500 cursor-pointer"
             onClick={handleSearch}
@@ -135,45 +108,14 @@ const Blogs = () => {
                 <th className="w-32 p-3 text-sm font-semibold tracking-wide text-left">
                   Tags
                 </th>
+                <th className="w-32 p-3 text-sm font-semibold tracking-wide text-left">
+                  Update
+                </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y-8 divide-gray-100">
               {filteredBlogsList.map((blog) => (
-                <tr className="bg-white" key={blog._id}>
-                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    <a
-                      href="#"
-                      className="font-bold text-blue-500 hover:underline"
-                    >
-                      {blog._id.substring(0, 10)}...
-                    </a>
-                  </td>
-                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    {blog.heading.substring(0, 40)}
-                  </td>
-                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    <span
-                      className={`p-1.5 text-xs font-medium uppercase tracking-wider cursor-pointer ${
-                        blog.status ? "text-green-800" : "text-gray-800"
-                      } ${
-                        blog.status ? "bg-green-200" : "bg-gray-200"
-                      } rounded-lg bg-opacity-50`}
-                      onClick={() => handleStatus(blog)}
-                    >
-                      {blog.status ? "Published" : "Not Published"}
-                    </span>
-                  </td>
-                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    {new Date(blog.createdAt)
-                      .toString()
-                      .split(" ")
-                      .slice(0, 4)
-                      .join(" ")}
-                  </td>
-                  <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
-                    {blog.tags.join(", ")}
-                  </td>
-                </tr>
+                <SingleBlogList blog={blog} key={blog._id} />
               ))}
             </tbody>
           </table>

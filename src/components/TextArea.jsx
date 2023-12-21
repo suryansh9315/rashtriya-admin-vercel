@@ -234,16 +234,16 @@ const TextArea = () => {
         placeholder="शीर्षक"
         value={heading}
         onChange={(e) => setHeading(e.target.value)}
-        className="text-4xl bg-[#f3f4f6] focus:outline-none w-full h-12"
+        className="text-4xl bg-[#f4f4f4] focus:outline-none w-full h-12"
       />
       <input
         type="text"
         placeholder="उपशीर्षक"
         value={subHeading}
         onChange={(e) => setSubHeading(e.target.value)}
-        className="text-2xl bg-[#f3f4f6] focus:outline-none w-full"
+        className="text-2xl bg-[#f4f4f4] focus:outline-none w-full"
       />
-      <div className="border relative border-gray-400 border-1 h-[350px] rounded-md shadow-sm flex items-center justify-center gap-4">
+      <div className="border relative border-gray-400 border-1 h-[400px] rounded-md shadow-sm flex items-center justify-center gap-4">
         {image && (
           <div
             className="absolute top-0 -right-8 cursor-pointer"
@@ -290,7 +290,7 @@ const TextArea = () => {
                 <input
                   type="text"
                   onChange={(e) => setImage_1_link(e.target.value)}
-                  className="h-10 w-60 relative bg-[#f3f4f6] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
+                  className="h-10 w-60 relative bg-[#f4f4f4] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
                 />
                 <div
                   className="bg-blue-500 h-10 w-10 flex items-center justify-center cursor-pointer"
@@ -330,7 +330,7 @@ const TextArea = () => {
                 <input
                   type="text"
                   onChange={(e) => setImage_1_yt(e.target.value)}
-                  className="h-10 w-60 relative bg-[#f3f4f6] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
+                  className="h-10 w-60 relative bg-[#f4f4f4] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
                 />
                 <div
                   className="bg-blue-500 h-10 w-10 flex items-center justify-center cursor-pointer"
@@ -407,7 +407,7 @@ const TextArea = () => {
                 <input
                   type="text"
                   onChange={(e) => setImage_2_link(e.target.value)}
-                  className="h-10 w-60 relative bg-[#f3f4f6] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
+                  className="h-10 w-60 relative bg-[#f4f4f4] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
                 />
                 <div
                   className="bg-blue-500 h-10 w-10 flex items-center justify-center cursor-pointer"
@@ -447,13 +447,13 @@ const TextArea = () => {
                 <input
                   type="text"
                   onChange={(e) => setImage_2_yt(e.target.value)}
-                  className="h-10 w-60 relative bg-[#f3f4f6] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
+                  className="h-10 w-60 relative bg-[#f4f4f4] border border-1 border-gray-500 px-3 py-4 focus:outline-none"
                 />
                 <div
                   className="bg-blue-500 h-10 w-10 flex items-center justify-center cursor-pointer"
                   onClick={() => {
                     if (image_2_yt) {
-                      setImage({
+                      setImage2({
                         type: "yt_video",
                         src: image_2_yt,
                       });

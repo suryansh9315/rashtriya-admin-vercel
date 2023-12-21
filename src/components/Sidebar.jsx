@@ -2,13 +2,16 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { user_token } from "../atoms/user";
+import { IoMdCreate, IoIosList, IoIosLogOut } from "react-icons/io";
+import { BiCarousel } from "react-icons/bi";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const Menus = [
-    { title: "Create", src: "Chart", link: "/" },
-    { title: "Search", src: "Search", link: "/blogs" },
-    { title: "Logout", src: "Setting" },
+    { title: "Create", src: <IoMdCreate size={20} color="#fff" />, link: "/" },
+    { title: "Search", src: <IoIosList size={20} color="#fff" />, link: "/blogs" },
+    { title: "Video Carousel", src: <BiCarousel size={20} color="#fff" />, link: "/video-carousel" },
+    { title: "Logout", src: <IoIosLogOut size={20} color="#fff" /> },
   ];
   const [userToken, setUserToken] = useRecoilState(user_token);
   const navigate = useNavigate();
@@ -39,20 +42,19 @@ const Sidebar = () => {
         {Menus.map((Menu, index) => (
           <li
             key={index}
-            className={`flex  rounded-md p-2 cursor-pointer hover:bg-[rgba(255,255,255,0.17)] text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} `}
+            className={`flex  rounded-md p-2 cursor-pointer hover:bg-[rgba(255,255,255,0.17)] text-gray-300 text-sm items-center gap-x-4 mt-2`}
             onClick={() => {
               if (Menu.title === "Logout") {
                 setUserToken(null);
-                localStorage.setItem("USERTOKEN", null)
+                localStorage.setItem("USERTOKEN", null);
                 navigate("/login");
               } else {
-                navigate(Menu.link)
+                navigate(Menu.link);
               }
             }}
           >
-            <img src={`${Menu.src}.png`} />
-            <span className={`${!open && "hidden"} origin-left duration-200`}>
+            {Menu.src}
+            <span className={`${!open && "hidden"} origin-left duration-200 text-white`}>
               {Menu.title}
             </span>
           </li>

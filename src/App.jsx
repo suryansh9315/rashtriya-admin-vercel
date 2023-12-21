@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import VideoCarousel from "./pages/VideoCarousel";
 
 const App = () => {
   const [userToken, setUserToken] = useRecoilState(user_token);
@@ -44,6 +45,7 @@ const App = () => {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/video-carousel" element={<VideoCarousel />} />
             <Route path="*" element={<NotFound />} />
           </>
         ) : (
