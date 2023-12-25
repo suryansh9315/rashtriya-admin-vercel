@@ -56,7 +56,7 @@ const VideoCarousel = () => {
     setList(obj);
     try {
       const res = await fetch(
-        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/updateYtList",
+        "https://api.rashtriyatv.com/api/blogs/updateYtList",
         {
           method: "POST",
           headers: {

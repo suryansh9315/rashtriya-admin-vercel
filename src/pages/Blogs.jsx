@@ -38,7 +38,7 @@ const Blogs = () => {
     try {
       setLoading(true);
       const res = await fetch(
-        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/getAllBlogs",
+        "https://api.rashtriyatv.com/api/blogs/getAllBlogs",
         {
           method: "POST",
           headers: {
@@ -69,7 +69,7 @@ const Blogs = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className={`py-7 px-7 w-full bg-[#f4f4f4]`}>
+      <div className={`py-7 px-7 w-full bg-[#f4f4f4] h-screen overflow-y-scroll`}>
         <h1 className="text-2xl font-semibold mb-5">Blogs</h1>
         <div className="relative shadow mb-5">
           <AiOutlineSearch
@@ -89,7 +89,7 @@ const Blogs = () => {
             />
           )}
         </div>
-        <div className="overflow-auto rounded-lg shadow">
+        <div className="rounded-lg shadow">
           <table className="w-full">
             <thead className="bg-white border-b-2 border-gray-200">
               <tr>

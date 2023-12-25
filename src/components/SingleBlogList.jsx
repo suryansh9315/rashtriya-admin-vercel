@@ -47,7 +47,7 @@ const SingleBlogList = ({ blog }) => {
     try {
       setLoading(true);
       const res = await fetch(
-        "http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/blogs/updateBlog",
+        "https://api.rashtriyatv.com/api/blogs/updateBlog",
         {
           method: "POST",
           headers: {

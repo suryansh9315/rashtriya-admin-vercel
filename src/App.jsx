@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const old_userToken = localStorage.getItem("USERTOKEN");
     const func = async () => {
-      const res = await fetch("http://rashtriya-tv-nodejs-env.eba-4gfrfqri.us-east-1.elasticbeanstalk.com/api/auth/check-token", {
+      const res = await fetch("https://api.rashtriyatv.com/api/auth/check-token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
