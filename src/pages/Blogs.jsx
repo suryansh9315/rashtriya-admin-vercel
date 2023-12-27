@@ -69,7 +69,7 @@ const Blogs = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className={`py-7 px-7 w-full bg-[#f4f4f4] h-screen overflow-y-scroll`}>
+      <div className={`py-7 px-3 md:px-7 w-full bg-[#f4f4f4] h-screen overflow-y-scroll`}>
         <h1 className="text-2xl font-semibold mb-5">Blogs</h1>
         <div className="relative shadow mb-5">
           <AiOutlineSearch
@@ -89,17 +89,17 @@ const Blogs = () => {
             />
           )}
         </div>
-        <div className="rounded-lg shadow">
+        <div className="rounded-lg shadow overflow-x-auto">
           <table className="w-full">
             <thead className="bg-white border-b-2 border-gray-200">
               <tr>
-                <th className="w-20 p-3 text-sm font-semibold tracking-wide text-left">
+                <th className="w-20 p-3 text-sm font-semibold tracking-wide text-left lg:flex hidden">
                   ID
                 </th>
                 <th className="p-3 text-sm font-semibold tracking-wide text-left">
                   Heading
                 </th>
-                <th className="w-24 p-3 text-sm font-semibold tracking-wide text-left">
+                <th className="w-20 lg:w-24 p-3 text-sm font-semibold tracking-wide text-left">
                   Status
                 </th>
                 <th className="w-24 p-3 text-sm font-semibold tracking-wide text-left">
@@ -108,7 +108,7 @@ const Blogs = () => {
                 <th className="w-32 p-3 text-sm font-semibold tracking-wide text-left">
                   Tags
                 </th>
-                <th className="w-32 p-3 text-sm font-semibold tracking-wide text-left">
+                <th className="w-20 lg:w-32 p-3 text-sm font-semibold tracking-wide text-left">
                   Update
                 </th>
               </tr>

@@ -228,22 +228,22 @@ const TextArea = () => {
   );
 
   return (
-    <div className="flex flex-col gap-5 w-[800px]">
+    <div className="flex flex-col gap-5 w-[400px] sm:w-[500px] md:w-[600px] lg:w-[800px]">
       <input
         type="text"
         placeholder="शीर्षक"
         value={heading}
         onChange={(e) => setHeading(e.target.value)}
-        className="text-4xl bg-[#f4f4f4] focus:outline-none w-full h-12"
+        className="text-3xl sm:text-4xl bg-[#f4f4f4] focus:outline-none w-full h-10 sm:h-12"
       />
       <input
         type="text"
         placeholder="उपशीर्षक"
         value={subHeading}
         onChange={(e) => setSubHeading(e.target.value)}
-        className="text-2xl bg-[#f4f4f4] focus:outline-none w-full"
+        className="text-xl sm:text-2xl bg-[#f4f4f4] focus:outline-none w-full"
       />
-      <div className="border relative border-gray-400 border-1 h-[400px] rounded-md shadow-sm flex items-center justify-center gap-4">
+      <div className="border relative border-gray-400 border-1 h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-md shadow-sm flex items-center justify-center gap-4">
         {image && (
           <div
             className="absolute top-0 -right-8 cursor-pointer"
@@ -356,11 +356,11 @@ const TextArea = () => {
         value={value}
         onChange={setValue}
         placeholder="Tell your story..."
-        className=""
+        className="text-sm sm:text-base"
         modules={modules}
         ref={quillRef}
       />
-      <div className="border relative border-gray-400 border-1 h-[350px] rounded-md shadow-sm flex items-center justify-center gap-4">
+      <div className="border relative border-gray-400 border-1 h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] rounded-md shadow-sm flex items-center justify-center gap-4">
         {image2 && (
           <div
             className="absolute top-0 -right-8 cursor-pointer"
@@ -477,7 +477,7 @@ const TextArea = () => {
         modules={modules}
         ref={quillRef2}
       />
-      <div className="flex flex-wrap gap-4 my-5">
+      <div className="flex flex-wrap gap-2 sm:gap-4 my-2 sm:my-5">
         <div
           className={`border-2 px-5 py-2 rounded-md cursor-pointer text-sm hover:bg-green-500 hover:border-green-500 hover:text-white transition-all duration-200 ${
             nationalNews
@@ -620,7 +620,7 @@ const TextArea = () => {
       <div>
         <div
           onClick={handlePublish}
-          className="px-5 py-3 border-2 rounded-md cursor-pointer border-black hover:bg-black hover:border-black hover:text-white transition-all duration-200 text-center mt-5"
+          className="px-5 py-3 border-2 rounded-md cursor-pointer border-black hover:bg-black hover:border-black hover:text-white transition-all duration-200 text-center mt-0 sm:mt-5"
         >
           Publish
         </div>

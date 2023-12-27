@@ -122,7 +122,7 @@ const VideoCarousel = () => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="bg-[#fff] w-full py-7 px-7 h-screen overflow-y-scroll overflow-x-hidden">
+      <div className="bg-[#fff] w-full py-7 px-3 sm:px-7 h-screen overflow-y-scroll overflow-x-scroll">
         <div className="w-[450px] sm:w-[600px] md:w-[800px] flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold">Video Carousel</h1>
           <div className="flex gap-4">
@@ -187,7 +187,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt1}
@@ -197,7 +197,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog1}
@@ -210,7 +210,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt2}
@@ -220,7 +220,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog2}
@@ -233,7 +233,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt3}
@@ -243,7 +243,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog3}
@@ -256,7 +256,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt4}
@@ -266,7 +266,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog4}
@@ -279,7 +279,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt5}
@@ -289,7 +289,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog5}
@@ -302,7 +302,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">YOUTUBE LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste yt link here"
                 value={yt6}
@@ -312,7 +312,7 @@ const VideoCarousel = () => {
             <div className="w-full">
               <div className="font-normal text-sm mb-2 ml-1">BLOG LINK</div>
               <input
-                className="bg-[#fff] px-5 py-4 w-[100%] rounded-md shadow-sm outline-none"
+                className="bg-[#fff] px-5 py-3 sm:py-4 w-[100%] rounded-md shadow-sm outline-none"
                 type="text"
                 placeholder="Paste blog link here"
                 value={blog6}

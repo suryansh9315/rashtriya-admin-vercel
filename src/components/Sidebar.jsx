@@ -8,10 +8,10 @@ import { BiCarousel } from "react-icons/bi";
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const Menus = [
-    { title: "Create", src: <IoMdCreate size={20} color="#fff" />, link: "/" },
-    { title: "Search", src: <IoIosList size={20} color="#fff" />, link: "/blogs" },
-    { title: "Video Carousel", src: <BiCarousel size={20} color="#fff" />, link: "/video-carousel" },
-    { title: "Logout", src: <IoIosLogOut size={20} color="#fff" /> },
+    { title: "Create", src: <IoMdCreate className="sm:w-6 w-5 h-5 sm:h-6" color="#fff" />, link: "/" },
+    { title: "Search", src: <IoIosList className="sm:w-6 w-5 h-5 sm:h-6" color="#fff" />, link: "/blogs" },
+    { title: "Video Carousel", src: <BiCarousel className="sm:w-6 w-5 h-5 sm:h-6" color="#fff" />, link: "/video-carousel" },
+    { title: "Logout", src: <IoIosLogOut className="sm:w-6 w-5 h-5 sm:h-6" color="#fff" /> },
   ];
   const [userToken, setUserToken] = useRecoilState(user_token);
   const navigate = useNavigate();
@@ -19,26 +19,26 @@ const Sidebar = () => {
   return (
     <div
       className={` ${
-        open ? "w-[20%]" : "w-[8%] items-center"
+        open ? "w-[100px] sm:w-[100px] md:w-[200px] lg:w-[300px]" : "w-[100px] sm:w-[100px] items-center"
       } bg-[#081A51] h-screen p-5 pt-10 relative duration-300 flex flex-col`}
     >
       <img
         src="control.png"
-        className={`absolute cursor-pointer -right-3 top-3 w-7 border-[#081A51]
+        className={`absolute cursor-pointer -right-3 top-3 w-7 border-[#081A51] hidden sm:flex
            border-2 rounded-full  ${!open && "rotate-180"}`}
         onClick={() => setOpen(!open)}
       />
-      <div className="flex gap-x-4 items-center">
-        <img src="logo.jpg" className={`cursor-pointer duration-500 w-16`} />
+      <div className="flex gap-x-4 items-center justify-center">
+        <img src="logo.jpg" className={`cursor-pointer ${open ? "w-16 sm:w-16" : "w-16 sm:w-16"}`} />
         <h1
           className={`text-white origin-left font-medium text-xl duration-200 ml-2 ${
-            !open && "scale-0"
+            open ? "lg:flex hidden" : "hidden"
           }`}
         >
           राष्ट्रीय टीवी
         </h1>
       </div>
-      <ul className="pt-6">
+      <ul className="pt-6 flex items-center flex-col md:items-start">
         {Menus.map((Menu, index) => (
           <li
             key={index}
@@ -54,7 +54,7 @@ const Sidebar = () => {
             }}
           >
             {Menu.src}
-            <span className={`${!open && "hidden"} origin-left duration-200 text-white`}>
+            <span className={`${open ? "hidden md:flex" : "hidden"} origin-left duration-200 text-white`}>
               {Menu.title}
             </span>
           </li>

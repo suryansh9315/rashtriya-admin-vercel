@@ -84,7 +84,7 @@ const SingleBlogList = ({ blog }) => {
 
   return (
     <tr className="bg-white w-full" key={blog._id}>
-      <td className="p-3 text-sm text-gray-700 whitespace-nowrap">
+      <td className="p-3 text-sm text-gray-700 whitespace-nowrap lg:flex hidden">
         <a href="#" className="font-bold text-blue-500 hover:underline">
           {blog._id.substring(0, 10)}...
         </a>
