@@ -12,6 +12,7 @@ const Blogs = () => {
   const [filteredBlogsList, setFilteredBlogsList] = useState([]);
   const [userToken, setUserToken] = useRecoilState(user_token);
   const [loading, setLoading] = useState(false);
+  const [reload, setReload] = useState(false)
 
   const handleSearch = () => {
     if (!searchQuery) {
@@ -64,7 +65,7 @@ const Blogs = () => {
 
   useEffect(() => {
     getBlogs();
-  }, []);
+  }, [reload]);
 
   return (
     <div className="flex">
@@ -108,14 +109,14 @@ const Blogs = () => {
                 <th className="w-32 p-3 text-sm font-semibold tracking-wide text-left">
                   Tags
                 </th>
-                <th className="w-20 lg:w-32 p-3 text-sm font-semibold tracking-wide text-left">
-                  Update
+                <th className="w-28 p-3 text-sm font-semibold tracking-wide text-left">
+                  Update/Delete
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y-8 divide-gray-100">
               {filteredBlogsList.map((blog) => (
-                <SingleBlogList blog={blog} key={blog._id} />
+                <SingleBlogList blog={blog} key={blog._id} reload={reload} setReload={setReload} />
               ))}
             </tbody>
           </table>

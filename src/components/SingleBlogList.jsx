@@ -8,6 +8,7 @@ import { IoPush } from "react-icons/io5";
 import toast from "react-hot-toast";
 import { user_token } from "../atoms/user";
 import { useRecoilState } from "recoil";
+import { MdDelete } from "react-icons/md";
 
 const tagsList = [
   "national",
@@ -26,7 +27,7 @@ const tagsList = [
   "podcast",
 ];
 
-const SingleBlogList = ({ blog }) => {
+const SingleBlogList = ({ blog, reload, setReload }) => {
   const [tags, setTags] = useState(blog?.tags);
   const [status, setStatus] = useState(blog?.status);
   const [loading, setLoading] = useState(false);
@@ -58,6 +59,37 @@ const SingleBlogList = ({ blog }) => {
             blogId: blog._id,
             status,
             tags,
+          }),
+        }
+      );
+      const data = await res.json();
+      if (res.status === 400) notify(data.message, "failure");
+      if (res.status === 401) setUserToken(null);
+      if (res.status === 200) {
+        notify(data.message, "success");
+      }
+    } catch (error) {
+      console.log(error);
+      notify("Something went wrong.", "failure");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      setLoading(true);
+      setReload(!reload)
+      const res = await fetch(
+        "https://api.rashtriyatv.com/api/blogs/deleteBlog",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            token: userToken,
+            blogId: blog._id,
           }),
         }
       );
@@ -126,11 +158,16 @@ const SingleBlogList = ({ blog }) => {
           </Select>
         </FormControl>
       </td>
-      <td className="p-3 flex items-center justify-end h-20 w-16">
+      <td className="p-3 flex items-center justify-center h-20 w-28 whitespace-nowrap gap-2">
         <IoPush
           size={28}
           className="text-blue-500 hover:text-blue-300 transition-all duration-200 cursor-pointer"
           onClick={handleUpdate}
+        />
+        <MdDelete
+          size={28}
+          className="text-blue-500 hover:text-blue-300 transition-all duration-200 cursor-pointer -translate-y-[2px]"
+          onClick={handleDelete}
         />
       </td>
     </tr>
