@@ -92,7 +92,7 @@ const TextArea = () => {
         text_section_2: value2,
         tags,
       };
-      const res = await fetch("https://api.rashtriyatv.com/api/blogs/create-blog", {
+      const res = await fetch("https://rashtriya-admin-aws.onrender.com/api/blogs/create-blog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

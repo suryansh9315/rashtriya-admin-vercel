@@ -39,7 +39,7 @@ const Blogs = () => {
     try {
       setLoading(true);
       const res = await fetch(
-        "https://api.rashtriyatv.com/api/blogs/getAllBlogs",
+        "https://rashtriya-admin-aws.onrender.com/api/blogs/getAllBlogs",
         {
           method: "POST",
           headers: {

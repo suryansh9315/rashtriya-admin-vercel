@@ -18,7 +18,7 @@ const LoginForm = () => {
     }
     try {
       setLoading(true);
-      const res = await fetch("https://api.rashtriyatv.com/api/auth/login", {
+      const res = await fetch("https://rashtriya-admin-aws.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

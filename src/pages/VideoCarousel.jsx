@@ -56,7 +56,7 @@ const VideoCarousel = () => {
     setList(obj);
     try {
       const res = await fetch(
-        "https://api.rashtriyatv.com/api/blogs/updateYtList",
+        "https://rashtriya-admin-aws.onrender.com/api/blogs/updateYtList",
         {
           method: "POST",
           headers: {

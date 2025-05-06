@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const old_userToken = localStorage.getItem("USERTOKEN");
     const func = async () => {
-      const res = await fetch("https://api.rashtriyatv.com/api/auth/check-token", {
+      const res = await fetch("https://rashtriya-admin-aws.onrender.com/api/auth/check-token", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

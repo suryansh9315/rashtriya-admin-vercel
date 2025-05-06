@@ -48,7 +48,7 @@ const SingleBlogList = ({ blog, reload, setReload }) => {
     try {
       setLoading(true);
       const res = await fetch(
-        "https://api.rashtriyatv.com/api/blogs/updateBlog",
+        "https://rashtriya-admin-aws.onrender.com/api/blogs/updateBlog",
         {
           method: "POST",
           headers: {
@@ -81,7 +81,7 @@ const SingleBlogList = ({ blog, reload, setReload }) => {
       setLoading(true);
       setReload(!reload)
       const res = await fetch(
-        "https://api.rashtriyatv.com/api/blogs/deleteBlog",
+        "https://rashtriya-admin-aws.onrender.com/api/blogs/deleteBlog",
         {
           method: "POST",
           headers: {
